@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Caesar Cypher</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class='container-fluid language-javascript' >
+
+  <!-- tabs -->
+  <ul class="nav nav-pills">
+    <li class="active">
+      <a href="#specs" data-toggle="tab">Specs</a>
+    </li>
+    <li><a href="#readme" data-toggle="tab">Readme</a>
+    </li>
+  </ul>
+
+  <!-- tab content -->
+  <div class="tab-content clearfix" style="margin-top: 20px">
+    <div class="tab-pane active" id="specs">
+    </div>
+    <div class="tab-pane" id="readme">
+    </div>
+  </div>
+</div>
+<script type="text/markdown" id="readme-md">
+  ### Caesar Cypher
+
+ A Caesar Cypher is a classic encryption technique favored by the ancient Romans.
+
+Define a function, `caesarCypher`, that accepts two arguments:
+  1. secret (string) - the string we want to encrypt
+  2. shift (num) - the number we want to rotate each letter in the string by
+
+`caesarCypher` should return an encrypted version of the string shifted by the number of letters supplied. For example, the string 'abc' shifted by 2 should return 'cde'. Spaces between words should not be rotated. Note that any shifts that exceed the end of the alphabet should wrap around. For example, the string 'xyz' shifted by 2 should return 'zab', the string 'hello' shifted by 13 should return 'urryb'.
+
+You can assume the shift number will be a positive integer. Additionally, you may assume that the secret string will be entirely lower case
+
+```javascript
+caesarCypher('hello world', 13); // => 'uryyb jbeyq'
+```
+
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.0.0/jasmine.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.12.2/themes/prism.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.0.0/jasmine.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.0.0/jasmine-html.js"></script>
+
+
+<!-- this is a custom boot that obeys a getContainer function on window -->
+<script type="text/javascript">
+  window.getContainer = function() {
+    return document.getElementById("specs");
+  }
+</script>
+<script src="https://learndotresources.s3.amazonaws.com/codepen-jasmine-custom-boot.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.17/marked.js"></script>
+<script>
+  // insert the readme as Markdown into the template
+  var data = document.getElementById("readme-md").innerHTML;
+  document.getElementById("readme").innerHTML = marked(data)
+</script>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
